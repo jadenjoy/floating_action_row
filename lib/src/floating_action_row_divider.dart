@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 /// Creates a divider for [FloatingActionRow]
 class FloatingActionRowDivider extends StatelessWidget {
-  final Color color;
+  final Color? color;
   final double width;
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   FloatingActionRowDivider({
     this.color,
@@ -14,9 +14,9 @@ class FloatingActionRowDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor =
+    Color? defaultColor =
         Theme.of(context).floatingActionButtonTheme.foregroundColor ??
-            Theme.of(context).accentIconTheme.color;
+            Theme.of(context).appBarTheme.backgroundColor;
 
     Widget result;
 
@@ -33,7 +33,7 @@ class FloatingActionRowDivider extends StatelessWidget {
           width: isColumn ? constraints.maxWidth : width,
           height: isColumn ? width : constraints.maxHeight,
           margin: padding ?? defaultPadding,
-          color: color ?? defaultColor.withOpacity(.4),
+          color: color ?? defaultColor?.withOpacity(.4),
         );
       },
     );
